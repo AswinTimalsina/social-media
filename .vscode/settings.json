@@ -1,0 +1,20 @@
+{
+    "emmet.excludeLanguages": [
+
+
+        "markdown"
+    ],
+    "emmet.extensionsPath": "",
+    "emmet.triggerExpansionOnTab": true,
+
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html",
+        "razor": "html",
+        "plaintext": "pug"
+    },
+    "beautify.config": "",
+    "beautify.ignore": "",
+
+
+}
