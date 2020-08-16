@@ -5,13 +5,14 @@ import SignedOutLinks from './SignedOutLinks';
 
 const Navbar = () => {
     return(
-        <nav className="nav-wrapper grey darken-2">
+        <nav className="nav-wrapper purple darken-2">
             <div className="container">
-                <Link to='/' className='brand-logo left'>MarioPlan </Link>
+                <Link to='/' className='brand-logo left' style={{fontFamily: 'Red Rose' }}>Come Unity </Link>
                 <SignedInLinks/>
                 <SignedOutLinks/>
             </div>
         </nav>
+        
     )
 }
 
