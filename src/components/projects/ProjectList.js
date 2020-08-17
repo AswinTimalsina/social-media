@@ -1,18 +1,19 @@
 import React from 'react';
 import ProjectSummary from './ProjectSummary';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
-const ProjectList = () => {
+const ProjectList = ({projects}) => {
     
+ 
         return(
             <div className="project-list section">
-                <Link to='/project/1'><ProjectSummary/></Link>
-                <ProjectSummary/>
-                <ProjectSummary/>
-                <ProjectSummary/>
+                {projects && projects.map(project=>{
+                    return(<ProjectSummary key={project.id} project={project}/>)
+                })}
             </div>
         )
     
 }
 
-export default ProjectList;
+
+export default (ProjectList);

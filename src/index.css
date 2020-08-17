@@ -5,6 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(/img/mountain-purple-sky-nature-scenery-4-4K.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: purple;
+  background-attachment: fixed;
+
+}
+
+form{
+  padding: 20px;
+  margin-top: 30px;
 }
 
 code {
