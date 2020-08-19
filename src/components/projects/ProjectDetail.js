@@ -21,7 +21,7 @@ const ProjectDetail = (props) => {
           <div>
             Posted by: {project.authorFirstName} {project.authorLastName}
           </div>
-          <div>hello</div>
+  {/* <div>{project.createdAt ? <p>{project.createdAt}</p> : null}</div> */}
         </div>
       </div>
     </div>

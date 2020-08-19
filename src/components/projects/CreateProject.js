@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {submitHandler} from '../store/actions/projectActions';
+import {Redirect} from 'react-router-dom';
 
 
 class CreateProject extends Component {
@@ -13,9 +14,17 @@ class CreateProject extends Component {
         e.preventDefault();
         // console.log('title: '+ this.state.title + ' content: '+ this.state.content)
         this.props.onSubmit(this.state);
+        this.props.history.push('/');
     }
 
     render() {
+
+        const {userLoggedIn} = this.props;
+
+        if(!userLoggedIn){
+            return <Redirect to='/login' />
+        }
+
         return (
             <div className="container">
                 <form onSubmit={this.onSubmitHandler} className='white'>
@@ -38,11 +47,11 @@ class CreateProject extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//     return{
-//         projects: state.project.projects
-//     }
-// }
+const mapStateToProps = state => {
+    return{
+        userLoggedIn: !state.firebase.auth.isEmpty
+    }
+}
 
 
 const mapDispatchToProps = dispatch => {
@@ -52,4 +61,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, mapDispatchToProps)(CreateProject);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateProject);

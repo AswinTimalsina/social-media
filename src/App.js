@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
     <div>
-      <Navbar/>
+      <Navbar />
       <Switch>
         <Route path='/' exact component={Dashboard}/>
         <Route path='/project/:id' component={ProjectDetail}/>
@@ -22,6 +22,7 @@ function App() {
         <Route path='/signup' component={SignUp}/>
         <Route path='/newPost' component={NewPost}/>
       </Switch>
+      
     </div>
     </BrowserRouter>
   );
