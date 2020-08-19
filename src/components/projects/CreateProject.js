@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {submitHandler} from '../store/actions/projectActions';
 
+
 class CreateProject extends Component {
     state={
         title:'',
@@ -37,11 +38,11 @@ class CreateProject extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return{
-        projects: state.project.projects
-    }
-}
+// const mapStateToProps = state => {
+//     return{
+//         projects: state.project.projects
+//     }
+// }
 
 
 const mapDispatchToProps = dispatch => {
@@ -51,4 +52,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateProject);
+export default connect(null, mapDispatchToProps)(CreateProject);
