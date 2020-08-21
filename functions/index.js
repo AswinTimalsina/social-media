@@ -19,18 +19,19 @@ const createNotification = (notification) => {
 
 exports.projectCreated = functions.firestore.document('projects/{projectId}').onCreate(doc=>{
     const project = doc.data();
-    console.log(project);
-    // const notification = {
-    //     content: 'Added a new project',
-    //     user: `${project.auth.firstName} ${project.auth.lastName}`,
-    //     time: admin.firestore.FieldValue.serverTimestamp()
-    // }
-    // return createNotification(notification);
+    // console.log('proj string: '+ JSON.stringify(project));
+    const notification = {
+        content: 'Added a new project',
+        user: `${project.authorFirstName} ${project.authorLastName}`,
+        time: admin.firestore.FieldValue.serverTimestamp()
+    }
+    return createNotification(notification);
 })
 
 exports.userJoined = functions.auth.user().onCreate(user=>{      //why use auth instead of using users directly??
     return admin.firestore().collection('users').doc(user.uid).get().then(doc=>{
         const newUser = doc.data();
+        // console.log('userJoined data: ' + JSON.stringify(newUser))
         const notification={
             content: 'Joined the party', 
             user: `${newUser.firstName} ${newUser.lastName}`,
