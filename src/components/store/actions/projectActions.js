@@ -8,6 +8,7 @@ export const submitHandler = (project) => {
             ...project,
             authorFirstName: getState().firebase.profile.firstName,
             authorLastName: getState().firebase.profile.lastName,
+            authorId: getState().firebase.auth.uid,
             createdAt: new Date()
         }).then(()=>dispatch({type: 'SUBMIT_PROJECT', project}))
         .catch(err=>{
